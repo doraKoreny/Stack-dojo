@@ -6,11 +6,29 @@ public class Stack {
     private String[] staticStackArray;
 
     private int startLength;
+
     private int itemCounter = 0;
 
     public Stack(int length) {
         this.startLength = length;
         this.staticStackArray = new String[length];
+    }
+
+    public int getStartLength() {
+        return startLength;
+    }
+
+    public int getItemCounter() {
+        return itemCounter;
+    }
+
+    public void push(String item) {
+        if (itemCounter > startLength) {
+            throw new ArrayIndexOutOfBoundsException();
+        } else {
+            staticStackArray[itemCounter] = item;
+            itemCounter++;
+        }
     }
 
     @Override
