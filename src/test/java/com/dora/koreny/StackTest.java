@@ -46,4 +46,23 @@ public class StackTest {
         Stack stack = new Stack(1);
         assertThrows(NullPointerException.class, () -> stack.pop());
     }
+
+    @Test
+    public void peekReturnsLastItem() {
+        Stack stack = new Stack(2);
+        stack.push("First");
+        stack.push("Second");
+        String lastItem = stack.peek();
+        assertEquals(lastItem, "Second");
+    }
+
+    @Test
+    public void peekDoesNotRemoveLastItem() {
+        Stack stack = new Stack(2);
+        stack.push("First");
+        stack.push("Second");
+        stack.peek();
+        int itemCounter = stack.getItemCounter();
+        assertEquals(itemCounter, 2);
+    }
 }

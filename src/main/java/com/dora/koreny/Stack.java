@@ -46,6 +46,11 @@ public class Stack {
         }
     }
 
+    public String peek() {
+        String lastItem = staticStackArray[itemCounter - 1];
+        return lastItem;
+    }
+
     @Override
     public String toString() {
         return "Stack{" +
