@@ -21,4 +21,29 @@ public class StackTest {
         stack.push("First");
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> stack.push("Second"));
     }
+
+    @Test
+    public void popReturnsLastItem() {
+        Stack stack = new Stack(2);
+        stack.push("First");
+        stack.push("Second");
+        String poppedItem = stack.pop();
+        assertEquals(poppedItem, "Second");
+    }
+
+    @Test
+    public void popRemovesLastItem() {
+        Stack stack = new Stack(2);
+        int lastItemIndex = stack.getItemCounter();
+        stack.push("First");
+        stack.push("Second");
+        stack.pop();
+        assertEquals(lastItemIndex, 0);
+    }
+
+    @Test
+    public void popThrowsExceptionWhenStackIsEmpty() {
+        Stack stack = new Stack(1);
+        assertThrows(NullPointerException.class, () -> stack.pop());
+    }
 }

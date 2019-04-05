@@ -14,6 +14,10 @@ public class Stack {
         this.staticStackArray = new String[length];
     }
 
+    public String[] getStaticStackArray() {
+        return staticStackArray;
+    }
+
     public int getStartLength() {
         return startLength;
     }
@@ -28,6 +32,17 @@ public class Stack {
         } else {
             staticStackArray[itemCounter] = item;
             itemCounter++;
+        }
+    }
+
+    public String pop() {
+        if (staticStackArray[0] == null) {
+            throw new NullPointerException("Error: Stack is empty");
+        } else {
+            String lastItem = staticStackArray[itemCounter - 1];
+            staticStackArray[itemCounter - 1] = null;
+            itemCounter--;
+            return lastItem;
         }
     }
 
