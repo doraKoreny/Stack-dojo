@@ -10,7 +10,6 @@ public class StackTest {
     @Test
     public void pushItemIncreasesItemCounter() {
         Stack stack = new Stack(5);
-        int stackSize = stack.getStartLength();
         stack.push("First");
         assertEquals(stack.getItemCounter(), 1);
     }

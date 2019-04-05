@@ -13,15 +13,7 @@ public class Stack {
         this.startLength = length;
         this.staticStackArray = new String[length];
     }
-
-    public String[] getStaticStackArray() {
-        return staticStackArray;
-    }
-
-    public int getStartLength() {
-        return startLength;
-    }
-
+    
     public int getItemCounter() {
         return itemCounter;
     }
