@@ -65,4 +65,12 @@ public class StackTest {
         int itemCounter = stack.getItemCounter();
         assertEquals(itemCounter, 2);
     }
+
+    @Test
+    public void getNumberOfItems() {
+        Stack stack = new Stack(2);
+        stack.push("First");
+        stack.push("Second");
+        assertEquals(stack.getNumberOfItems(), 2);
+    }
 }

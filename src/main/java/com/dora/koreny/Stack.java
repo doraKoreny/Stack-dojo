@@ -51,6 +51,10 @@ public class Stack {
         return lastItem;
     }
 
+    public int getNumberOfItems() {
+        return itemCounter;
+    }
+
     @Override
     public String toString() {
         return "Stack{" +
